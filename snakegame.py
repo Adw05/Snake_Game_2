@@ -3,13 +3,15 @@ from food import Food
 from scoreboard import Scoreboard
 import time
 from snake import Snake
+from boundary import Boundary
 screen=Screen()
 screen.setup(width=600,height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
-
+boundary=Boundary()
+boundary.draw()
 food=Food()
 food.refresh()
 snake=Snake()
@@ -20,6 +22,8 @@ screen.onkey(snake.up,"Up")
 screen.onkey(snake.right,"Right")
 screen.onkey(snake.left,"Left")
 screen.onkey(snake.down,"Down")
+
+
 
 game_is_on=True
 while game_is_on:
@@ -34,7 +38,7 @@ while game_is_on:
         snake.extend()
         scoreboard.add_score()
         scoreboard.update_scoreboard()
-    if snake.head.xcor()>280 or snake.head.xcor()<-280 or snake.head.ycor()>280 or snake.head.ycor()<-280:
+    if snake.head.xcor()>270 or snake.head.xcor()<-270 or snake.head.ycor()>270 or snake.head.ycor()<-270:
         game_is_on=False
         scoreboard.game_over()
     if food.xcor()>270 or food.xcor()<-270 or food.ycor()>270 or food.ycor()<-270:
