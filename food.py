@@ -11,8 +11,8 @@ class Food(Turtle):
         self.speed("fastest")
         self.escape_count=0
     def refresh(self):
-        random_cordx=random.randint(-250,250)
-        random_cordy=random.randint(-250,250)
+        random_cordx=random.randint(-210,210)
+        random_cordy=random.randint(-210,210)
         self.goto(random_cordx,random_cordy)
 
     def move_food(self):
